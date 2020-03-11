@@ -826,6 +826,40 @@ margin-bottom: 20px;
     }
   }
 };
+        defs["Request body_11"] = {
+  "type" : "object",
+  "properties" : {
+    "dateOfdelivery" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "Email" : {
+      "type" : "string"
+    },
+    "transportMode" : {
+      "type" : "string"
+    }
+  }
+};
+        defs["Request body_12"] = {
+  "type" : "object",
+  "properties" : {
+    "orderNum" : {
+      "type" : "string"
+    },
+    "status" : {
+      "type" : "string"
+    }
+  }
+};
+        defs["Request body_13"] = {
+  "type" : "object",
+  "properties" : {
+    "Email" : {
+      "type" : "string"
+    }
+  }
+};
         defs["Request body_2"] = {
   "type" : "object",
   "properties" : {
@@ -1005,6 +1039,19 @@ margin-bottom: 20px;
                     <li data-group="Foods" data-name="updateFood" class="">
                       <a href="#api-Foods-updateFood">updateFood</a>
                     </li>
+                  <li class="nav-header" data-group="Orders"><a href="#api-Orders">API Methods - Orders</a></li>
+                    <li data-group="Orders" data-name="neworder" class="">
+                      <a href="#api-Orders-neworder">neworder</a>
+                    </li>
+                    <li data-group="Orders" data-name="orderlist" class="">
+                      <a href="#api-Orders-orderlist">orderlist</a>
+                    </li>
+                    <li data-group="Orders" data-name="orderstatus" class="">
+                      <a href="#api-Orders-orderstatus">orderstatus</a>
+                    </li>
+                    <li data-group="Orders" data-name="userorders" class="">
+                      <a href="#api-Orders-userorders">userorders</a>
+                    </li>
                   <li class="nav-header" data-group="Users"><a href="#api-Users">API Methods - Users</a></li>
                     <li data-group="Users" data-name="changePassword" class="">
                       <a href="#api-Users-changePassword">changePassword</a>
@@ -1086,7 +1133,7 @@ margin-bottom: 20px;
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Foods-createFood-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/foods/create"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/foods/create"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Foods-createFood-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1347,7 +1394,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Foods-deleteFood-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/foods/delete"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/foods/delete"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Foods-deleteFood-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1608,7 +1655,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Foods-foodDetail-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost:8080/foods/detail?Params="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:8080/foods/detail?Params="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Foods-foodDetail-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1854,7 +1901,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Foods-foodcost-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost:8080/foods/cost?Params="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:8080/foods/cost?Params="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Foods-foodcost-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2100,7 +2147,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Foods-foodlist-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost:8080/foods/list?Params="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:8080/foods/list?Params="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Foods-foodlist-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2346,7 +2393,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Foods-updateFood-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/foods/update"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/foods/update"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Foods-updateFood-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2576,6 +2623,1038 @@ $(document).ready(function() {
                       </div>
                       <hr>
                   </section>
+                <section id="api-Orders">
+                  <h1>Orders</h1>
+                    <div id="api-Orders-neworder">
+                      <article id="api-Orders-neworder-0" data-group="User" data-name="neworder" data-version="0">
+                        <div class="pull-left">
+                          <h1>neworder</h1>
+                          <p>To place a new order</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/orders/newOrder</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Orders-neworder-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Orders-neworder-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Orders-neworder-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Orders-neworder-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Orders-neworder-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Orders-neworder-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Orders-neworder-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Orders-neworder-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Orders-neworder-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Orders-neworder-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Orders-neworder-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Orders-neworder-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/orders/newOrder"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Orders-neworder-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrdersApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        
+        OrdersApi apiInstance = new OrdersApi();
+        Request body_11 request body = ; // Request body_11 | The body of the request should be constructed as follows
+        try {
+            apiInstance.neworder(request body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#neworder");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Orders-neworder-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrdersApi;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        OrdersApi apiInstance = new OrdersApi();
+        Request body_11 request body = ; // Request body_11 | The body of the request should be constructed as follows
+        try {
+            apiInstance.neworder(request body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#neworder");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Orders-neworder-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Orders-neworder-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Request body_11 *request body = ; // The body of the request should be constructed as follows (optional)
+
+OrdersApi *apiInstance = [[OrdersApi alloc] init];
+
+// To place a new order
+[apiInstance neworderWith:request body
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-neworder-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var FoodFactory = require('food_factory');
+
+var api = new FoodFactory.OrdersApi()
+
+var opts = { 
+  'request body':  // {Request body_11} The body of the request should be constructed as follows
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.neworder(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Orders-neworder-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Orders-neworder-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class neworderExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new OrdersApi();
+            var request body = new Request body_11(); // Request body_11 | The body of the request should be constructed as follows (optional) 
+
+            try
+            {
+                // To place a new order
+                apiInstance.neworder(request body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrdersApi.neworder: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-neworder-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrdersApi();
+$request body = ; // Request body_11 | The body of the request should be constructed as follows
+
+try {
+    $api_instance->neworder($request body);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->neworder: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-neworder-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrdersApi;
+
+my $api_instance = WWW::SwaggerClient::OrdersApi->new();
+my $request body = WWW::SwaggerClient::Object::Request body_11->new(); # Request body_11 | The body of the request should be constructed as follows
+
+eval { 
+    $api_instance->neworder(request body => $request body);
+};
+if ($@) {
+    warn "Exception when calling OrdersApi->neworder: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-neworder-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrdersApi()
+request body =  # Request body_11 | The body of the request should be constructed as follows (optional)
+
+try: 
+    # To place a new order
+    api_instance.neworder(request body=request body)
+except ApiException as e:
+    print("Exception when calling OrdersApi->neworder: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">request body </td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "Request body",
+  "description" : "The body of the request should be constructed as follows",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/Request body_11"
+  }
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_neworder_request body');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_neworder_request body"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - success true - Order placed successfully; success false - Error occured while placing order. </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Orders-orderlist">
+                      <article id="api-Orders-orderlist-0" data-group="User" data-name="orderlist" data-version="0">
+                        <div class="pull-left">
+                          <h1>orderlist</h1>
+                          <p>To fetch all orders </p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/orders/list</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Orders-orderlist-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Orders-orderlist-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Orders-orderlist-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Orders-orderlist-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Orders-orderlist-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Orders-orderlist-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Orders-orderlist-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Orders-orderlist-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Orders-orderlist-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Orders-orderlist-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Orders-orderlist-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Orders-orderlist-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:8080/orders/list?Params="</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Orders-orderlist-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrdersApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        
+        OrdersApi apiInstance = new OrdersApi();
+        String params = params_example; // String | No parameters required
+        try {
+            apiInstance.orderlist(params);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#orderlist");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Orders-orderlist-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrdersApi;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        OrdersApi apiInstance = new OrdersApi();
+        String params = params_example; // String | No parameters required
+        try {
+            apiInstance.orderlist(params);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#orderlist");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Orders-orderlist-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Orders-orderlist-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *params = params_example; // No parameters required (optional)
+
+OrdersApi *apiInstance = [[OrdersApi alloc] init];
+
+// To fetch all orders 
+[apiInstance orderlistWith:params
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderlist-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var FoodFactory = require('food_factory');
+
+var api = new FoodFactory.OrdersApi()
+
+var opts = { 
+  'params': params_example // {String} No parameters required
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.orderlist(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Orders-orderlist-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Orders-orderlist-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class orderlistExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new OrdersApi();
+            var params = params_example;  // String | No parameters required (optional) 
+
+            try
+            {
+                // To fetch all orders 
+                apiInstance.orderlist(params);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrdersApi.orderlist: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderlist-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrdersApi();
+$params = params_example; // String | No parameters required
+
+try {
+    $api_instance->orderlist($params);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->orderlist: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderlist-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrdersApi;
+
+my $api_instance = WWW::SwaggerClient::OrdersApi->new();
+my $params = params_example; # String | No parameters required
+
+eval { 
+    $api_instance->orderlist(params => $params);
+};
+if ($@) {
+    warn "Exception when calling OrdersApi->orderlist: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderlist-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrdersApi()
+params = params_example # String | No parameters required (optional)
+
+try: 
+    # To fetch all orders 
+    api_instance.orderlist(params=params)
+except ApiException as e:
+    print("Exception when calling OrdersApi->orderlist: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">Params</td>
+<td>
+
+
+    <div id="d2e199_orderlist_params">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description">
+                        No parameters required
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - success true - Orders fetched successfully; success false - Error occured while fetching all orders. </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Orders-orderstatus">
+                      <article id="api-Orders-orderstatus-0" data-group="User" data-name="orderstatus" data-version="0">
+                        <div class="pull-left">
+                          <h1>orderstatus</h1>
+                          <p>To update order status </p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/orders/status</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Orders-orderstatus-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Orders-orderstatus-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Orders-orderstatus-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Orders-orderstatus-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Orders-orderstatus-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Orders-orderstatus-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Orders-orderstatus-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Orders-orderstatus-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Orders-orderstatus-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Orders-orderstatus-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Orders-orderstatus-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Orders-orderstatus-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/orders/status"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Orders-orderstatus-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrdersApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        
+        OrdersApi apiInstance = new OrdersApi();
+        Request body_12 request body = ; // Request body_12 | The body of the request should be constructed as follows
+        try {
+            apiInstance.orderstatus(request body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#orderstatus");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Orders-orderstatus-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrdersApi;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        OrdersApi apiInstance = new OrdersApi();
+        Request body_12 request body = ; // Request body_12 | The body of the request should be constructed as follows
+        try {
+            apiInstance.orderstatus(request body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#orderstatus");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Orders-orderstatus-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Orders-orderstatus-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Request body_12 *request body = ; // The body of the request should be constructed as follows (optional)
+
+OrdersApi *apiInstance = [[OrdersApi alloc] init];
+
+// To update order status 
+[apiInstance orderstatusWith:request body
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderstatus-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var FoodFactory = require('food_factory');
+
+var api = new FoodFactory.OrdersApi()
+
+var opts = { 
+  'request body':  // {Request body_12} The body of the request should be constructed as follows
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.orderstatus(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Orders-orderstatus-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Orders-orderstatus-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class orderstatusExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new OrdersApi();
+            var request body = new Request body_12(); // Request body_12 | The body of the request should be constructed as follows (optional) 
+
+            try
+            {
+                // To update order status 
+                apiInstance.orderstatus(request body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrdersApi.orderstatus: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderstatus-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrdersApi();
+$request body = ; // Request body_12 | The body of the request should be constructed as follows
+
+try {
+    $api_instance->orderstatus($request body);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->orderstatus: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderstatus-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrdersApi;
+
+my $api_instance = WWW::SwaggerClient::OrdersApi->new();
+my $request body = WWW::SwaggerClient::Object::Request body_12->new(); # Request body_12 | The body of the request should be constructed as follows
+
+eval { 
+    $api_instance->orderstatus(request body => $request body);
+};
+if ($@) {
+    warn "Exception when calling OrdersApi->orderstatus: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-orderstatus-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrdersApi()
+request body =  # Request body_12 | The body of the request should be constructed as follows (optional)
+
+try: 
+    # To update order status 
+    api_instance.orderstatus(request body=request body)
+except ApiException as e:
+    print("Exception when calling OrdersApi->orderstatus: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">request body </td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "Request body",
+  "description" : "The body of the request should be constructed as follows",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/Request body_12"
+  }
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_orderstatus_request body');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_orderstatus_request body"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - success true - Order updated successfully; success false - Error occured while updating order. </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Orders-userorders">
+                      <article id="api-Orders-userorders-0" data-group="User" data-name="userorders" data-version="0">
+                        <div class="pull-left">
+                          <h1>userorders</h1>
+                          <p>To fetch user order </p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/orders/userOrders</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Orders-userorders-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Orders-userorders-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Orders-userorders-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Orders-userorders-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Orders-userorders-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Orders-userorders-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Orders-userorders-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Orders-userorders-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Orders-userorders-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Orders-userorders-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Orders-userorders-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Orders-userorders-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/orders/userOrders"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Orders-userorders-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrdersApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        
+        OrdersApi apiInstance = new OrdersApi();
+        Request body_13 request body = ; // Request body_13 | The body of the request should be constructed as follows
+        try {
+            apiInstance.userorders(request body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#userorders");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Orders-userorders-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrdersApi;
+
+public class OrdersApiExample {
+
+    public static void main(String[] args) {
+        OrdersApi apiInstance = new OrdersApi();
+        Request body_13 request body = ; // Request body_13 | The body of the request should be constructed as follows
+        try {
+            apiInstance.userorders(request body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrdersApi#userorders");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Orders-userorders-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Orders-userorders-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Request body_13 *request body = ; // The body of the request should be constructed as follows (optional)
+
+OrdersApi *apiInstance = [[OrdersApi alloc] init];
+
+// To fetch user order 
+[apiInstance userordersWith:request body
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-userorders-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var FoodFactory = require('food_factory');
+
+var api = new FoodFactory.OrdersApi()
+
+var opts = { 
+  'request body':  // {Request body_13} The body of the request should be constructed as follows
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.userorders(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Orders-userorders-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Orders-userorders-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class userordersExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new OrdersApi();
+            var request body = new Request body_13(); // Request body_13 | The body of the request should be constructed as follows (optional) 
+
+            try
+            {
+                // To fetch user order 
+                apiInstance.userorders(request body);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrdersApi.userorders: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-userorders-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrdersApi();
+$request body = ; // Request body_13 | The body of the request should be constructed as follows
+
+try {
+    $api_instance->userorders($request body);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->userorders: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-userorders-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrdersApi;
+
+my $api_instance = WWW::SwaggerClient::OrdersApi->new();
+my $request body = WWW::SwaggerClient::Object::Request body_13->new(); # Request body_13 | The body of the request should be constructed as follows
+
+eval { 
+    $api_instance->userorders(request body => $request body);
+};
+if ($@) {
+    warn "Exception when calling OrdersApi->userorders: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Orders-userorders-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrdersApi()
+request body =  # Request body_13 | The body of the request should be constructed as follows (optional)
+
+try: 
+    # To fetch user order 
+    api_instance.userorders(request body=request body)
+except ApiException as e:
+    print("Exception when calling OrdersApi->userorders: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">request body </td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "Request body",
+  "description" : "The body of the request should be constructed as follows",
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/Request body_13"
+  }
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_userorders_request body');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_userorders_request body"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - success true - Successfully fetched user orders; success false - Error occured while fetching user orders. </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                  </section>
                 <section id="api-Users">
                   <h1>Users</h1>
                     <div id="api-Users-changePassword">
@@ -2610,7 +3689,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-changePassword-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/changePassword"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/changePassword"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-changePassword-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2871,7 +3950,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-deactivate-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/deactivate"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/deactivate"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-deactivate-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3132,7 +4211,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-delete-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/delete"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/delete"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-delete-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3393,7 +4472,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-list-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost:8080/users/list?Params="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:8080/users/list?Params="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-list-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3639,7 +4718,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-login-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/login"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/login"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-login-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3900,7 +4979,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-resetPassword-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/resetPassword"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/resetPassword"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-resetPassword-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -4161,7 +5240,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-signup-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/signup"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/signup"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-signup-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -4422,7 +5501,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-update-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/update"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/update"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-update-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -4683,7 +5762,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Users-userdetail-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://localhost:8080/users/userdetail"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:8080/users/userdetail"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Users-userdetail-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
